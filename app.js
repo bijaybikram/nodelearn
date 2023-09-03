@@ -1,8 +1,10 @@
 const express = require("express"); // requiring express package
 const app = express(); // storing it in app, app vanney variable throughout use garney
 
+app.set("view engine", "ejs");
+
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.render("home.ejs");
 });
 
 app.get("/contact", (req, res) => {
@@ -10,7 +12,7 @@ app.get("/contact", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-  res.send("<h1>Bye World</h1>");
+  res.render("about.ejs");
 });
 
 app.listen(3000, function () {
